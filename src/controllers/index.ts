@@ -106,6 +106,7 @@ export class OrderController {
     async getAll(request: Request, response: Response) {
         try {
             const orders = await Order.findAll();
+            if(orders.length === 0) return response.status(404).json({ message: "No orders found" });
             return response.json(orders);
         } catch (error) {
             return response.status(500).json({ message: "Error fetching orders" });
@@ -114,32 +115,44 @@ export class OrderController {
 
     async place(request: Request, response: Response) {
         const { userName, groceryList } = request.body;
-
+        const authToken = request.headers.authorization; 
+    
+        if (!authToken) {
+            return response.status(401).json({ message: "Authorization token is missing" });
+        }
+    
         try {
-           
             for (const item of groceryList) {
                 const { grocery_id, quantity } = item;
-                const listedItem = await axios.get(`http://localhost:3000/getGroceryItemById/${grocery_id}`).then(res => res.data);
-
+    
+                const listedItem = await axios
+                    .get(`http://localhost:3000/api/getGroceryItemById/${grocery_id}`, {
+                        headers: { Authorization: authToken },
+                    })
+                    .then((res) => res.data);
+    
                 if (listedItem.quantity < quantity) {
                     return response.status(400).json({ message: "Can't fulfill this order quantity" });
                 } else {
-                    await axios.put(`http://localhost:3000/updateGroceryItem/${grocery_id}`, {
-                        quantity: listedItem.quantity - quantity
-                    });
+                    await axios.put(
+                        `http://localhost:3000/api/updateGroceryItem/${grocery_id}`,
+                        { quantity: listedItem.quantity - quantity },
+                        { headers: { Authorization: authToken } }
+                    );
                 }
             }
-
+    
             const newOrder = await Order.create({
                 userName,
-                groceryList
+                groceryList,
             });
-
+    
             return response.status(201).json(newOrder);
         } catch (error) {
             return response.status(500).json({ message: "Error placing the order" });
         }
     }
+    
 }
 
 export class UserController {
@@ -209,5 +222,6 @@ export class UserController {
             return response.status(500).json({ message: "Error during login" });
         }
     }
+
     
 }

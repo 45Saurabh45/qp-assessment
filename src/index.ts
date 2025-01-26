@@ -8,15 +8,6 @@ import router from "./routes";
 const app = express();
 
 app.use(bodyParser.json());
-app.use(
-  session({
-    secret: "your-secret-key",
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 30000 }, 
-  })
-);
-
 app.use("/api", router); 
 
 app.use((err, req, res, next) => {

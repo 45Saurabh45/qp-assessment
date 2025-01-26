@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "0670d093-9fec-47b3-847d-d4f8219b1db1",
+		"name": "qp-assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41545384"
+	},
+	"item": [
+		{
+			"name": "getAllGroceryItems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getAllGroceryItems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getAllGroceryItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addGroceryItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODM1OTY1LCJleHAiOjE3Mzc4Mzk1NjV9.eiwOP6zoqDjfW3GOCcs9cIq2YySxYTSOV97fqyGOE-0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "session",
+						"value": "true",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM3ODM1NjcyLCJleHAiOjE3Mzc4MzkyNzJ9.fjITIFyc5WPm_YObTOW-AuL4zgm-1ex7Lqll1pcWvDU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Grocery Item\",\r\n  \"price\": 10.5,\r\n  \"quantity\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/addGroceryItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"addGroceryItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Qp Testing \",\r\n  \"password\": \"123456\",\r\n  \"is_admin\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/addUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGroceryItemById/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getGroceryItemById/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getGroceryItemById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeGroceryItem/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/removeGroceryItem/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"removeGroceryItem",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateGroceryItem/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Tomato\",\r\n  \"price\": 22,\r\n  \"quantity\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/updateGroceryItem/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"updateGroceryItem",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getAllOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getAllOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "placeOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Saurabh2\",\r\n    \"groceryList\": [\r\n        {\r\n            \"grocery_id\": 1,\r\n            \"quantity\": 20\r\n        },\r\n        {\r\n            \"grocery_id\": 2,\r\n            \"quantity\": 16\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/placeOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"placeOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc1OTE5LCJleHAiOjE3Mzc4Nzk1MTl9.FdL2OaU5lXbEXA65ztAhsvAz_kNOEB-egsd82qVp14o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getAllUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc1OTU0LCJleHAiOjE3Mzc4Nzk1NTR9.wkr06ih8NILaNjcf6DtqpyNLwyX-yolS0cc-dn8MquU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getUserById/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getUserById",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeUserById/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6dHJ1ZSwiaWF0IjoxNzM3ODc0Mzc1LCJleHAiOjE3Mzc4Nzc5NzV9.8SUY71yz9WMuaU36KDxb3G3vHkI7nXpr1vXHODkoAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/removeUserById/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"removeUserById",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Qp Testing \",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

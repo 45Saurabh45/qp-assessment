@@ -26,5 +26,4 @@ router.get("/getUserById/:id", verifyToken, (req, res) => userController.getById
 router.post("/addUser", (req, res) => userController.createnewUser(req, res));
 router.delete("/removeUserById/:id", verifyToken, (req, res) => userController.remove(req, res));
 router.post("/login", (req, res) => userController.login(req, res));
-
 export default router;
